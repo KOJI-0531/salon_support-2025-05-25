@@ -1,71 +1,66 @@
-
-
-    
-
-    
-    <div class="section-secondary">
-        <section class="section">
-            <h1 class="section-headline second-headline">お問い合わせ</h1>
-            <%= form_with model: @contact, local: true, class: 'form' do |f| %>
-                    <div class="form-item">
-                        <div class="form-headline">
-                            <%= f.label :name, "お名前", class: "label" %> <span class="form-label">必須</span>
-                        </div>
-                        <%= f.text_field :name, class:'input' %>
+<div class="section-secondary">
+    <section class="section">
+        <h1 class="section-headline second-headline">お問い合わせ</h1>
+        <%= form_with model: @contact, url: contacts_path, local: true, class: 'form' do |f| %>
+                <div class="form-item">
+                    <div class="form-headline">
+                        <%= f.label :name, "お名前", class: "label" %> <span class="form-label">必須</span>
                     </div>
-
-                    <div class="form-item">
-                        <div class="form-headline">
-                            <%= f.label :phone, "お電話番号", class: "label" %>
-                        </div>
-                        <%= f.text_field :phone, class: "input", id: "phone" %>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-headline">
-                            <%= f.label :email, "メールアドレス", class: "label" %>
-                        </div>
-                        <%= f.email_field :email, class: "input", id: "email" %>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-headline">
-                            ご希望の連絡方法 <span class="form-label">必須</span>
-                        </div>
-                        <label class="label">
-                            <%= f.check_box :contact_method, { multiple: true, class: "checkbox", id: "contact_email" }, "メール", nil %> メール
-                        </label>
-                        <label>
-                            <%= f.check_box :contact_method, { multiple: true, class: "checkbox", id: "contact_phone" }, "電話", nil %> 電話
-                        </label>
-                    </div>
-
-                    <div class="form-item">
-                        <div class="form-headline">
-                            <%= f.label :message, "お問い合わせ内容", class: "label" %>
-                            <span class="form-label">必須</span>
-                        </div>
-                        <%= f.text_area :message, class: "textarea", id: "detail", cols: 30, rows: 10 %>
-                    </div>
-                <div class="section-button">
-                    <div class="button-outer">
-                        <%= f.submit "送信する", class: "button-inner" %>
-                    </div>
+                    <%= f.text_field :name, class:'input' %>
                 </div>
-            <% end %>
-        </section>
-    </div>
 
-        
+                <div class="form-item">
+                    <div class="form-headline">
+                        <%= f.label :phone, "お電話番号", class: "label" %>
+                    </div>
+                    <%= f.text_field :phone, class: "input", id: "phone" %>
+                </div>
 
+                <div class="form-item">
+                    <div class="form-headline">
+                        <%= f.label :email, "メールアドレス", class: "label" %>
+                    </div>
+                    <%= f.email_field :email, class: "input", id: "email" %>
+                </div>
 
+                <div class="form-item">
+                    <div class="form-headline">
+                        ご希望の連絡方法 <span class="form-label">必須</span>
+                    </div>
+                    <label class="label">
+                        <%= f.check_box :contact_method, { multiple: true, class: "checkbox", id: "contact_email" }, "メール", nil %> メール
+                    </label>
+                    <label>
+                        <%= f.check_box :contact_method, { multiple: true, class: "checkbox", id: "contact_phone" }, "電話", nil %> 電話
+                    </label>
+                </div>
 
-
-
-
-
+                <div class="form-item">
+                    <div class="form-headline">
+                        <%= f.label :message, "お問い合わせ内容", class: "label" %>
+                        <span class="form-label">必須</span>
+                    </div>
+                    <%= f.text_area :message, class: "textarea", id: "detail", cols: 30, rows: 10 %>
+                </div>
+            <div class="section-button">
+                <div class="button-outer">
+                    <%= f.submit "送信する", class: "button-inner" %>
+                </div>
+            </div>
+        <% end %>
+    </section>
+</div>
 
     
+
+
+
+
+
+
+
+
+
 
 
 
